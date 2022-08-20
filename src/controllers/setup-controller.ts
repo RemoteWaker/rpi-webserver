@@ -1,14 +1,17 @@
 import { Router } from "express";
-import utils from "~/utils/utils";
-import fs from 'fs'
+import axios from "axios";
+
+const baseUrl = "https://remotewaker.vicart.dev/api"
 
 const router = Router()
 
 router.post('/', (req, res) => {
     const body = req.body as SetupPostBody
-    fs.writeFileSync(utils.config_path, JSON.stringify(body))
+    axios.post(baseUrl + "/user/device", {
+        "": ""
+    })
     res.status(201).json({
-        "message": "config set !",
+        "message": "device registered",
         "options": body
     })
 })

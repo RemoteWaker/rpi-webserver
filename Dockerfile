@@ -15,7 +15,6 @@ COPY --from=0 /build/dist/index.js .
 COPY package.json .
 RUN npm install --omit=dev
 RUN mkdir -p /data/config
-VOLUME ["/data"]
 
 EXPOSE 8080
 
